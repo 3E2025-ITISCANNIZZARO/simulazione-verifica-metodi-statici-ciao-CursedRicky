@@ -62,7 +62,7 @@ public class Main {
      */
     public static int somma(int a,int b) {
         int risposta=0;
-        // TODO: SCRIVI QUI IL CODICE
+        risposta = a+b;
         return risposta;
     }
 
@@ -75,7 +75,11 @@ public class Main {
      */
     public static String isMaggiorenne(int age) {
         String risposta="maggiorenne,minorenne";
-        // TODO: SCRIVI QUI IL CODICE
+        if (age>=18) {
+            risposta = "maggiorenne";
+        } else {
+            risposta = "minorenne";
+        }
         return risposta;
     }
 
@@ -87,7 +91,11 @@ public class Main {
      */
     public static boolean isVocale(char carattere) {
         boolean risposta=false;
-        // TODO: SCRIVI QUI IL CODICE
+        if (carattere == 'a' || carattere == 'e' || carattere == 'i' || carattere == 'o' || carattere == 'u') {
+            risposta = true;
+        } else {
+            risposta = false;
+        }
         return risposta;
     }
 
@@ -101,7 +109,13 @@ public class Main {
      */
     public static String tipoTriangolo(float lato1, float lato2, float lato3) {
         String risposta="equilatero,isoscele,scaleno";
-        // TODO: SCRIVI QUI IL CODICE
+        if (lato1 == lato2 || lato2 == lato3 || lato3 == lato1) {
+            risposta = "isoscele";
+        } else if (lato1 == lato2 && lato2 == lato3) {
+            risposta = "equilatero";
+        } else {
+            risposta = "scaleno";
+        }
         return risposta;
     }
 
@@ -114,7 +128,9 @@ public class Main {
      */
     public static String giornoSettimana(int giorno) {
         String risposta="lunedì,martedì,mercoledì,giovedì,venerdì,sabato,domenica";
-        // TODO: SCRIVI QUI IL CODICE
+        String []giorni = {"lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"};
+        // Algebra modulare
+        risposta = giorni[(giorno%7)%7];
         return risposta;
     }
 
@@ -129,7 +145,11 @@ public class Main {
      */
     public static String ordineDecrescente(int fine, int inizio) {
         String risposta="100,99,98";
-        // TODO: SCRIVI QUI IL CODICE
+        risposta = "";
+        for (int i = inizio; i<=fine; i++) {
+            risposta += Integer.toString(i);
+            risposta += ",";
+        }
         return risposta;
     }
 
@@ -146,7 +166,10 @@ public class Main {
      */
     public static int giorniLumaca(float sale, float scende, float muro) {
         int risposta=0;
-        // TODO: SCRIVI QUI IL CODICE
+        while (muro > 0) {
+            muro -= sale-scende;
+            risposta++;
+        } 
         return risposta;
     }
 
@@ -166,7 +189,26 @@ public class Main {
 
     public static String coordinatePunto(int x1, int y1, int x2, int y2,int x3,int y3) {
         String risposta="1,1";
-        // TODO: SCRIVI QUI IL CODICE
+        String x4;
+        String y4;
+        if (x1 == x2) {
+            x4 = x3;
+        } else if (x1 == x3) {
+            x4 = x2;
+        } else {
+            x4 = x1;
+        }
+
+        if (y1 == y2) {
+            y4 = y3;
+        } else if (y1 == y3) {
+            y4 = y2;
+        } else {
+            y4 = y1;
+        }
+        
+        risposta = Integer.toString(x4) + "," + Integer.toString(y4);
+        
         return risposta;
     }
 }

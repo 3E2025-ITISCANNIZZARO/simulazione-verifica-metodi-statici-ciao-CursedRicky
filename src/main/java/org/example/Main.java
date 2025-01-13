@@ -129,6 +129,7 @@ public class Main {
     public static String giornoSettimana(int giorno) {
         String risposta="lunedì,martedì,mercoledì,giovedì,venerdì,sabato,domenica";
         String []giorni = {"lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"};
+        // Algebra modulare
         risposta = giorni[(giorno%7)%7];
         return risposta;
     }
